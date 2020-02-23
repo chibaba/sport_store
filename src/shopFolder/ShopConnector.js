@@ -32,6 +32,10 @@ export const ShopConnector = connect(mapStateToProps, mapDispatchToProps) (
                 <Redirect to="/shop/products" />
             </Switch>
         }
-        
+        componentDidMount() {
+            this.props.loadData(DataTypes.CATEGORIES);  
+            this.props.loadData(DataTypes.PRODUCTS);
+        }
+
     }
 )
